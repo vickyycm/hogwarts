@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import com.hogwarts.app.ui.home.Home;
+import android.content.Intent;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -125,6 +127,9 @@ public class Signin extends AppCompatActivity {
                     mostrarCargando(false);
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "¡Cuenta creada! Bienvenido a Hogwarts", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Signin.this, Home.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
                         finish();
                     } else {
                         Toast.makeText(this, "Error guardando datos del usuario", Toast.LENGTH_LONG).show();

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hogwarts">
         <activity
-            android:name=".ui.auth.Home"
+            android:name=".ui.home.Home"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

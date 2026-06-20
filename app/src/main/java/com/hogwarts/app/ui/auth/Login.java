@@ -1,21 +1,6 @@
 package com.hogwarts.app.ui.auth;
 
-import android.content.Intent;
 import android.app.Activity;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.hogwarts.app.model.Usuario;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,11 +11,24 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.hogwarts.app.R;
+import com.hogwarts.app.model.Usuario;
+import com.hogwarts.app.ui.home.Home;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -53,7 +51,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-
         db = FirebaseFirestore.getInstance();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -81,9 +78,9 @@ public class Login extends AppCompatActivity {
 
         btnLogin.setOnClickListener(v -> intentarLogin());
 
-        tvIrARegistro.setOnClickListener(v -> {
-            startActivity(new Intent(Login.this, Signin.class));
-        });
+        tvIrARegistro.setOnClickListener(v ->
+                startActivity(new Intent(Login.this, Signin.class))
+        );
 
         btnGoogleSignIn.setOnClickListener(v -> {
             mostrarCargando(true);
@@ -143,15 +140,11 @@ public class Login extends AppCompatActivity {
                     mostrarCargando(false);
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "¡Bienvenido a Hogwarts!", Toast.LENGTH_SHORT).show();
+                        irAHome();
                     } else {
                         Toast.makeText(this, "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
-    }
-
-    private void mostrarCargando(boolean cargando) {
-        progressBar.setVisibility(cargando ? View.VISIBLE : View.GONE);
-        btnLogin.setEnabled(!cargando);
     }
 
     private void manejarResultadoGoogle(Task<GoogleSignInAccount> completedTask) {
@@ -181,7 +174,7 @@ public class Login extends AppCompatActivity {
                         } else {
                             mostrarCargando(false);
                             Toast.makeText(this, "¡Bienvenido de nuevo!", Toast.LENGTH_SHORT).show();
-                            // TODO: ir al Home
+                            irAHome();
                         }
                     } else {
                         mostrarCargando(false);
@@ -200,11 +193,23 @@ public class Login extends AppCompatActivity {
                     mostrarCargando(false);
                     if (task.isSuccessful()) {
                         Toast.makeText(this, "¡Bienvenido a Hogwarts!", Toast.LENGTH_SHORT).show();
-                        // TODO: ir al Home
+                        irAHome();
                     } else {
                         Toast.makeText(this, "Error guardando datos del usuario", Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+
+    private void irAHome() {
+        Intent intent = new Intent(Login.this, Home.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void mostrarCargando(boolean cargando) {
+        progressBar.setVisibility(cargando ? View.VISIBLE : View.GONE);
+        btnLogin.setEnabled(!cargando);
     }
 
     @Override
