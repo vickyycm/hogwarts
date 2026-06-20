@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul_oscuro">#1A1A4E</color>
+    <color name="azul_medianoche">#0D0D2B</color>
+    <color name="dorado">#C9A84C</color>
+    <color name="dorado_claro">#E8D9A0</color>
+    <color name="pergamino">#F5E6C8</color>
+    <color name="burdeos">#5C1A1A</color>
+    <color name="pergamino_claro">#F0E4C8</color>
+    <color name="pergamino_medio">#E0CFA0</color>
+    <color name="pergamino_sombra">#C9B583</color>
+    <color name="card_azul_oscuro">#1A1A3E</color>
+    <color name="card_borde">#3D3D6B</color>
+    <color name="texto_dorado_card">#D4AF37</color>
+    <color name="texto_celeste_card">#8FA8D8</color>
+</resources>

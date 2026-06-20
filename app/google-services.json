@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "456052075921",
+    "firebase_url": "https://hogwarts-2b072-default-rtdb.firebaseio.com",
+    "project_id": "hogwarts-2b072",
+    "storage_bucket": "hogwarts-2b072.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456052075921:android:daf1ac2d9240c417ea7e30",
+        "android_client_info": {
+          "package_name": "com.hogwarts.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456052075921-8494lg4h65hrslvduous8lm1r1qmcqlq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hogwarts.app",
+            "certificate_hash": "47d493ac45b57050c34df2389f5b5fe89e959b04"
+          }
+        },
+        {
+          "client_id": "456052075921-8tjocgeh84a2boem3510s4hrfb4pga0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhyqpiqA2SCSUbbX8ZdgTXoxfhaV0nYNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456052075921-8tjocgeh84a2boem3510s4hrfb4pga0r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
