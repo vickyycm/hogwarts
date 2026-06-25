@@ -10,11 +10,9 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -29,7 +27,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.hogwarts.app.R;
 import com.hogwarts.app.model.Usuario;
 import com.hogwarts.app.ui.home.Home;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -104,7 +101,7 @@ public class Login extends AppCompatActivity {
 
         mostrarCargando(true);
 
-        // Hilo secundario
+        //hilo secundario
         executorService.execute(() -> {
             boolean esValido = validarCampos(email, password);
 

@@ -11,7 +11,7 @@ public class Hechizo {
     private Timestamp fechaCreacion;
 
     public Hechizo() {
-        // Constructor vacío requerido por Firestore
+        //constructor vacío
     }
 
     public Hechizo(String uid, String nombre, String tipo, String anotaciones) {

@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hogwarts">
         <activity
+            android:name=".ui.foro.ForoNovedades"
+            android:exported="false" />
+        <activity
+            android:name=".ui.perfil.Perfil"
+            android:exported="false" />
+        <activity
+            android:name=".ui.hechizos.AgregarHechizo"
+            android:exported="false" />
+        <activity
+            android:name=".ui.hechizos.ListaHechizos"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.Home"
             android:exported="false" />
         <activity

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_listado"
-    tools:context=".ui.hechizos.AgregarHechizo">
+    tools:context=".ui.home.Perfil">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,13 +14,12 @@
         android:padding="24dp">
 
         <TextView
-            android:id="@+id/tvTitulo"
+            android:id="@+id/tvTituloPerfilAct"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
             android:fontFamily="@font/titulo_font"
             android:gravity="center"
-            android:text="Nuevo Hechizo"
+            android:text="Perfil del Mago"
             android:textColor="@color/azul_oscuro"
             android:textSize="35sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,110 +27,126 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.224" />
+            app:layout_constraintVertical_bias="0.154" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progressBarPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloPerfilAct"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginTop="16dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilNombre"
+            android:id="@+id/tilPerfilEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             app:boxStrokeColor="@color/dorado"
             app:hintTextColor="@color/dorado"
-            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+            app:layout_constraintTop_toBottomOf="@id/tvTituloPerfilAct"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="16dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNombre"
+                android:id="@+id/etPerfilEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre del hechizo"
-                android:inputType="text"
+                android:enabled="false"
+                android:hint="Correo electrónico"
+                android:inputType="textEmailAddress"
                 android:fontFamily="@font/texto_font"
                 android:textColor="@color/azul_medianoche" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilTipo"
+            android:id="@+id/tilPerfilNombre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:boxStrokeColor="@color/dorado"
+            app:hintTextColor="@color/dorado"
+            app:layout_constraintTop_toBottomOf="@id/tilPerfilEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPerfilNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del mago / bruja"
+                android:inputType="textPersonName"
+                android:fontFamily="@font/texto_font"
+                android:textColor="@color/azul_medianoche" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPerfilCasa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             app:boxStrokeColor="@color/dorado"
             app:hintTextColor="@color/dorado"
-            app:layout_constraintTop_toBottomOf="@id/tilNombre"
+            app:layout_constraintTop_toBottomOf="@id/tilPerfilNombre"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="16dp">
+            app:layout_constraintEnd_toEndOf="parent">
 
             <AutoCompleteTextView
-                android:id="@+id/etTipo"
+                android:id="@+id/etPerfilCasa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Tipo"
+                android:hint="Casa de Hogwarts"
                 android:fontFamily="@font/texto_font"
                 android:textColor="@color/azul_medianoche"
                 android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilAnotaciones"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/dorado"
-            app:hintTextColor="@color/dorado"
-            app:layout_constraintTop_toBottomOf="@id/tilTipo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="32dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etAnotaciones"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:fontFamily="@font/texto_font"
-                android:gravity="top"
-                android:hint="Anotaciones"
-                android:inputType="textMultiLine"
-                android:textColor="@color/azul_medianoche" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
-            android:id="@+id/btnGuardar"
+            android:id="@+id/btnGuardarPerfil"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:backgroundTint="@color/dorado"
             android:fontFamily="@font/titulo_font"
-            android:text="Guardar"
+            android:text="Guardar Cambios"
             android:textColor="@color/azul_medianoche"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilAnotaciones" />
+            app:layout_constraintTop_toBottomOf="@id/tilPerfilCasa"
+            app:layout_constraintVertical_bias="0.211" />
 
         <Button
-            android:id="@+id/btnCancelar"
+            android:id="@+id/btnEliminarCuenta"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:backgroundTint="@color/burdeos"
             android:fontFamily="@font/titulo_font"
-            android:text="Cancelar"
+            android:text="Eliminar Cuenta"
+            android:textColor="@color/dorado_claro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnGuardarPerfil" />
+
+        <Button
+            android:id="@+id/btnVolverPerfil"
+            android:layout_width="128dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/burdeos"
+            android:fontFamily="@font/titulo_font"
+            android:text="Volver"
             android:textColor="@color/dorado_claro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnGuardar"
+            app:layout_constraintTop_toBottomOf="@id/btnEliminarCuenta"
             app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

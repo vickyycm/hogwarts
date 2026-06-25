@@ -8,7 +8,7 @@ public class Usuario {
     private String fotoUrl;
 
     public Usuario() {
-        // Constructor vacío requerido por Firestore
+        //constructor vacio
     }
 
     public Usuario(String uid, String nombre, String email, String casa, String fotoUrl) {
