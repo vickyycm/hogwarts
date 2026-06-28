@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_hogwarts"
+    tools:context=".ui.trivia.JuegoTrivia">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+            <TextView
+                android:id="@+id/tvTituloTrivia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/titulo_font"
+                android:gravity="center"
+                android:text="TRIVIA DE LA COPA"
+                android:textColor="@color/texto_dorado_card"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.137" />
+
+            <TextView
+                android:id="@+id/tvContadorPreguntas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/texto_font"
+                android:gravity="center"
+                android:text="Pregunta 1 de ..."
+                android:textColor="@color/texto_celeste_card"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTituloTrivia" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerPregunta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_card_home"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvContadorPreguntas">
+
+                <TextView
+                    android:id="@+id/tvEnunciado"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titulo_font"
+                    android:text="Cargando pregunta mágica..."
+                    android:textColor="@color/pergamino_claro"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rgOpciones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEnunciado">
+
+                    <RadioButton
+                        android:id="@+id/rbOpcion1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:buttonTint="@color/dorado"
+                        android:fontFamily="@font/texto_font"
+                        android:text="Opción 1"
+                        android:textColor="@color/texto_celeste_card"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbOpcion2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:buttonTint="@color/dorado"
+                        android:fontFamily="@font/texto_font"
+                        android:text="Opción 2"
+                        android:textColor="@color/texto_celeste_card"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbOpcion3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:buttonTint="@color/dorado"
+                        android:fontFamily="@font/texto_font"
+                        android:text="Opción 3"
+                        android:textColor="@color/texto_celeste_card"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rbOpcion4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/dorado"
+                        android:fontFamily="@font/texto_font"
+                        android:text="Opción 4"
+                        android:textColor="@color/texto_celeste_card"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btnSiguiente"
+                android:layout_width="287dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/burdeos"
+                android:fontFamily="@font/titulo_font"
+                android:text="Siguiente Pregunta"
+                android:textColor="@color/dorado_claro"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/containerPregunta" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

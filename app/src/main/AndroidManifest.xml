@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hogwarts">
         <activity
+            android:name=".ui.trivia.RankingCasas"
+            android:exported="false" />
+        <activity
+            android:name=".ui.trivia.JuegoTrivia"
+            android:exported="false" />
+        <activity
             android:name=".ui.foro.ForoNovedades"
             android:exported="false" />
         <activity

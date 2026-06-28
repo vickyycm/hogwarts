@@ -194,14 +194,71 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:backgroundTint="@color/dorado"
+                    android:backgroundTint="@color/burdeos"
                     android:fontFamily="@font/titulo_font"
                     android:text="Entrar"
-                    android:textColor="@color/azul_medianoche"
+                    android:textColor="@color/pergamino_claro"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvDescForo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardTrivia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_card_home"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardForo">
+
+                <TextView
+                    android:id="@+id/tvTituloTrivia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/titulo_font"
+                    android:gravity="center"
+                    android:text="TRIVIA DE CASAS"
+                    android:textColor="@color/texto_dorado_card"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvDescTrivia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/texto_font"
+                    android:gravity="center"
+                    android:text="Competí y suma puntos por más que gane Gryffindor."
+                    android:textColor="@color/texto_celeste_card"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTituloTrivia" />
+
+                <Button
+                    android:id="@+id/btnJugarTrivia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:backgroundTint="@color/burdeos"
+                    android:fontFamily="@font/titulo_font"
+                    android:text="Jugar"
+                    android:textColor="@color/dorado_claro"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDescTrivia" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -217,10 +274,8 @@
                 android:textColor="@color/pergamino"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardForo"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@id/cardTrivia" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
